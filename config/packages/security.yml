@@ -1,0 +1,22 @@
+security:
+    role_hierarchy:
+        ROLE_ADMIN: ROLE_USER
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
+    providers:
+        in_memory:
+            memory:
+                users:
+                    note:
+                        password: note
+                        roles: 'ROLE_USER'
+                    admin:
+                        password: admin
+                        roles: 'ROLE_ADMIN'
+    firewalls:
+        main:
+            http_basic:
+                realm: Secured Area
+    access_control:
+        - { path: ^/users, roles: ROLE_ADMIN, methods: [GET, POST, PUT, DELETE]}
+        - { path: ^/notes, roles: ROLE_USER, methods: [GET, POST, PUT, DELETE]}

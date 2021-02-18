@@ -1,0 +1,4 @@
+notes:
+    resource: routes/notes.yml
+users:
+    resource: routes/users.yml

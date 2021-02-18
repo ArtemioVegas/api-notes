@@ -1,0 +1,14 @@
+framework:
+    annotations:
+        enabled: true
+    serializer:
+        enabled: true
+    secret: '%env(APP_SECRET)%'
+    session:
+        enabled: false
+    validation:
+        enabled: false
+    php_errors:
+        log: true
+    secrets:
+        enabled: false
